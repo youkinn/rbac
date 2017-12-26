@@ -1,0 +1,16 @@
+/**
+ * 
+ *
+ * @url /userInfo
+ *
+ * 参数说明：
+ *
+ * 
+ */
+{
+    "code": 0,
+    "data": {
+        "userId": 1111,
+        "userName": "youkinn"
+    }
+}
