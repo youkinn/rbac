@@ -29,9 +29,6 @@
 </script>
 
 <style lang="scss" scoped>
-  .slide-fade-active {
-    transition: width 3.3s ease;
-  }
   .site-header {
     width: 100%;
     height: 71px;
@@ -50,7 +47,7 @@
   }
   
   .site-aside {
-    position: absolute;
+    position: fixed;
     padding-top: 35px;
     min-height: 100%;
     background-color: #324057;
@@ -58,7 +55,7 @@
   .site-main {
     min-height: 100%;
     margin-left: 200px;
-    padding: 50px 30px;
+    padding: 30px;
   }
   
   .container {

@@ -1,6 +1,6 @@
 <template>
   <el-row class="jm-menu tac">
-    <el-menu default-active="1" class="el-menu-vertical-demo" :collapse="isCollapse" background-color="#324057"
+    <el-menu default-active="2-1" class="el-menu-vertical-demo" :collapse="false" background-color="#324057"
         text-color="#fff" active-text-color="#ffd04b">
       <nuxt-link class="button" to="/">
         <el-menu-item index="1">
