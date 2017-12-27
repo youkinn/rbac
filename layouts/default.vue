@@ -4,8 +4,8 @@
       <site-header/>
     </header>
     <div class="site-content clearfix">
-      <asile class="site-aside fl">
-        <site-menu/>
+      <asile class="site-aside fl" ref="aside">
+        <site-menu />
       </asile>
       <section class="site-main">
         <nuxt/>
@@ -26,11 +26,12 @@
       SiteMenu
     }
   }
-
 </script>
 
 <style lang="scss" scoped>
-  
+  .slide-fade-active {
+    transition: width 3.3s ease;
+  }
   .site-header {
     width: 100%;
     height: 71px;
@@ -49,14 +50,15 @@
   }
   
   .site-aside {
-    width: 200px;
+    position: absolute;
+    padding-top: 35px;
     min-height: 100%;
-    // border-right: 1px solid #e6e6e6;
     background-color: #324057;
   }
   .site-main {
     min-height: 100%;
-    margin-left: 180px;
+    margin-left: 200px;
+    padding: 50px 30px;
   }
   
   .container {
