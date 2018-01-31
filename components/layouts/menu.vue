@@ -1,7 +1,7 @@
 <template>
   <el-row class="jm-menu tac">
-    <el-menu default-active="2-1" class="el-menu-vertical-demo" :collapse="false" background-color="#324057"
-        text-color="#fff" active-text-color="#ffd04b">
+    <el-menu default-active="2-1" class="el-menu-vertical-demo" :collapse="false" background-color="#373d41"
+        text-color="#fff" active-text-color="#00c1de">
       <nuxt-link class="button" to="/">
         <el-menu-item index="1">
           <i class="el-icon-menu"></i>

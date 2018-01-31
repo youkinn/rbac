@@ -2,7 +2,7 @@
   <div class="t-header">
     <div class="logo clearfix">
       <div class="logo__icon fl"></div>
-      <div class="logo__name fl">用户权限管理系统</div>
+      <div class="logo__name fl">管理控制台</div>
     </div>
   </div>
 </template>
@@ -14,12 +14,12 @@
   left: 0;
   width: 100%;
   min-width: 600px;
-  height: 60px;
-  padding: 5px 15px;
-  border-bottom: 1px solid #1f2d3d;
+  height: 50px;
+  padding: 0 15px;
+  border-bottom: 1px solid #373d41;
   z-index: 100;
   color: #fff;
-  background: #324057;
+  background: #373d41;
 }
 .logo{
   width: 400px;
@@ -30,7 +30,7 @@
     margin-top: 6px;
     margin-right: 15px;
     border-radius: 50%;
-    background: url('~/static/images/site/logo.jpg') no-repeat center;
+    // background: url('~/static/images/site/logo.jpg') no-repeat center;
     background-size: cover;
   }
   &__name {

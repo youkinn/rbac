@@ -31,17 +31,17 @@
 <style lang="scss" scoped>
   .site-header {
     width: 100%;
-    height: 71px;
+    height: 50px;
     padding-left: 10px;
     padding-right: 10px;
-    background-color: #324057;
+    background-color: #373d41;
   }
   
   .site-content {
     background-color: #fff;
     width: 100%;
     position: absolute;
-    top: 71px;
+    top: 50px;
     bottom: 0px;
     left: 0px;
   }
@@ -50,7 +50,7 @@
     position: fixed;
     padding-top: 35px;
     min-height: 100%;
-    background-color: #324057;
+    background-color: #373d41;
   }
   .site-main {
     min-height: 100%;
