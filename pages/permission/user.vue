@@ -13,17 +13,17 @@
         <el-button size="small" type="warning" icon="el-icon-close">禁用</el-button>
         <el-button size="small" type="danger" icon="el-icon-delete">批量删除</el-button>
       </div>
-      <el-table ref="multipleTable" :data="tableData" tooltip-effect="dark" :stripe="true" border>
+      <el-table ref="multipleTable" :data="tableData" tooltip-effect="dark" border>
         <el-table-column type="selection" width="55"></el-table-column>
         <el-table-column prop="username" label="账户" width="120"> </el-table-column>
         <el-table-column prop="name" label="姓名" width="120"> </el-table-column>
         <el-table-column prop="date" label="最后登陆日期" width="120"></el-table-column>
         <el-table-column prop="address" label="地址" show-overflow-tooltip> </el-table-column>
-        <el-table-column label="操作">
+        <el-table-column label="操作" width="250">
           <template scope="scope">
-            <el-button size="small" @click="handleEdit(scope.$index, scope.row)">编辑</el-button>
-            <el-button size="small" @click="handleEdit(scope.$index, scope.row)">设置角色</el-button>
-            <el-button size="small" type="danger" @click="handleDelete(scope.$index, scope.row)">删除</el-button>
+            <el-button size="mini" @click="handleEdit(scope.$index, scope.row)">编辑</el-button>
+            <el-button size="mini" @click="handleEdit(scope.$index, scope.row)">设置角色</el-button>
+            <el-button size="mini" type="danger" @click="handleDelete(scope.$index, scope.row)">删除</el-button>
           </template>
         </el-table-column>
       </el-table>

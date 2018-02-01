@@ -1,7 +1,59 @@
 //覆盖element-ui 样式
+
+/* menu */
 .site-aside .el-menu {
     border-right: none;
 }
+
+.el-submenu__title {
+    height: 40px;
+    line-height: 40px;
+    background-color: #42485B;
+}
+
+.el-menu-item-group__title {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.nuxt-link-exact-active .el-menu-item {
+    background-color: #00c1de!important;
+}
+
+.active {
+    .el-menu-item i,
+    .el-submenu__title i {
+        color: #fff;
+    }
+}
+
+.el-menu-item i,
+.el-submenu__title i {
+    color: #aeb9c2;
+}
+
+thead .tr {
+    padding: 8px 8px;
+    font-weight: normal;
+    color: #999;
+    border-bottom: 1px solid #e1e6eb;
+    background-color: #F5F6FA;
+}
+
+.el-table td, .el-table th {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.el-table--border td, .el-table--border th {
+    border: none;
+}
+
+.el-table .cell {
+    font-size: 12px;
+    color: #666;
+}
+
 .el-table__body-wrapper {
     overflow-x: hidden;
 }

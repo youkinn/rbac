@@ -1,7 +1,8 @@
 <template>
   <el-row class="jm-menu tac">
-    <el-menu default-active="2-1" class="el-menu-vertical-demo" :collapse="false" background-color="#373d41"
-        text-color="#fff" active-text-color="#00c1de">
+    <div active></div>
+    <el-menu default-active="currentIndex" class="el-menu-vertical-demo" :collapse="false" background-color="#333744"
+        text-color="#fff" active-text-color="#fff">
       <nuxt-link class="button" to="/">
         <el-menu-item index="1">
           <i class="el-icon-menu"></i>
@@ -10,18 +11,43 @@
       </nuxt-link>
       <el-submenu index="2">
         <template slot="title">
-          <i class="el-icon-setting"></i>
+          <i class="el-icon-fa-cog"></i>
+          <span slot="title">系统管理</span>
+        </template>
+        <el-menu-item-group v-active>
+          <nuxt-link class="button" to="/system/dictionary">
+            <el-menu-item index="2-1">字典管理</el-menu-item>
+          </nuxt-link>
+        </el-menu-item-group>
+      </el-submenu>
+      <el-submenu index="3">
+        <template slot="title">
+          <i class="el-icon-fa-key fa"></i>
           <span slot="title">权限管理</span>
         </template>
-        <el-menu-item-group>
-          <nuxt-link class="button" to="/user">
-            <el-menu-item index="2-1">用户管理</el-menu-item>
+        <el-menu-item-group v-active>
+          <nuxt-link class="button" to="/permission/user">
+            <el-menu-item index="3-1">用户管理</el-menu-item>
           </nuxt-link>
-          <nuxt-link class="button" to="/role">
-            <el-menu-item index="2-2">角色管理</el-menu-item>
+          <nuxt-link class="button" to="/permission/role">
+            <el-menu-item index="3-2">角色管理</el-menu-item>
           </nuxt-link>
-          <nuxt-link class="button" to="/menu">
-            <el-menu-item index="2-3">菜单管理</el-menu-item>
+          <nuxt-link class="button" to="/permission/menu">
+            <el-menu-item index="3-3">菜单管理</el-menu-item>
+          </nuxt-link>
+        </el-menu-item-group>
+      </el-submenu>
+      <el-submenu index="4">
+        <template slot="title">
+          <i class="el-icon-tickets"></i>
+          <span slot="title">博客管理</span>
+        </template>
+        <el-menu-item-group v-active>
+          <nuxt-link class="button" to="/article">
+            <el-menu-item index="4-1">文章管理</el-menu-item>
+          </nuxt-link>
+          <nuxt-link class="button" to="/message">
+            <el-menu-item index="4-2">留言管理</el-menu-item>
           </nuxt-link>
         </el-menu-item-group>
       </el-submenu>
@@ -40,14 +66,17 @@
       cursor: pointer;
     }
   }
-}
-.el-menu-vertical-demo:not(.el-menu--collapse) {
-  width: 200px;
-  min-height: 400px;
+  .el-menu-vertical-demo:not(.el-menu--collapse) {
+    width: 200px;
+    min-height: 400px;
+  }
+  .el-menu-item {
+    height: 40px;
+    line-height: 40px;
+  }
 }
 </style>
 
 <script>
-export default {
-}
+export default {};
 </script>

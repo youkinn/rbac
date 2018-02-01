@@ -24,7 +24,7 @@
       SiteHeader,
       SiteFooter,
       SiteMenu
-    }
+    } 
   }
 </script>
 
@@ -50,7 +50,7 @@
     position: fixed;
     padding-top: 35px;
     min-height: 100%;
-    background-color: #373d41;
+    background-color: #333744;
   }
   .site-main {
     min-height: 100%;

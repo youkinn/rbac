@@ -34,7 +34,8 @@ module.exports = {
   },
 
   router: {
-    middleware: ['ssr-cookie']
+    middleware: ['ssr-cookie'],
+    linkActiveClass: 'active'
   },
   modules: [
     ['@nuxtjs/proxy']

@@ -1,12 +1,29 @@
 /* 全局样式 */
-html, body
-{
-  background-color: #fff;
-  color: #2e2f30;
-  letter-spacing: 0.5px;
-  font-family: "Source Sans Pro", Arial, sans-serif;
-  // height: 100vh;
-  overflow-x: hidden;
+
+html,
+body {
+    background-color: #fff;
+    color: #2e2f30;
+    letter-spacing: 0.5px;
+    font-family: "Source Sans Pro", Arial, sans-serif;
+    // height: 100vh;
+    overflow-x: hidden;
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: Helvetica Neue, Luxi Sans, DejaVu Sans, Tahoma, Hiragino Sans GB, STHeiti, Microsoft YaHei;
 }
 
 // footer
@@ -15,30 +32,40 @@ html, body
 //   text-align: center;
 //   border-top: 1px solid #ddd;
 // }
+a,
+a:hover,
+a:focus,
+a:visited {
+    text-decoration: none;
+}
 
-a, a:hover, a:focus, a:visited
-{
-  text-decoration: none;
+[class^="el-icon-fa"],
+[class*=" el-icon-fa"] {
+    display: inline-block;
+    font-family: FontAwesome!important;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .logo {
-  width: 243px;
-  height: 218px;
+    width: 243px;
+    height: 218px;
 }
 
-.page-enter-active, .page-leave-active
-{
-  transition: opacity .5s
+.page-enter-active,
+.page-leave-active {
+    transition: opacity .5s
 }
-.page-enter, .page-leave-active
-{
-  opacity: 0
+
+.page-enter,
+.page-leave-active {
+    opacity: 0
 }
 
 .el-breadcrumb {
-  margin-bottom: 20px;
-  padding-bottom: 20px;
-  border-bottom: solid #e6ebf5 1px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: solid #e6ebf5 1px;
 }
-
-
