@@ -36,13 +36,22 @@ thead .tr {
     padding: 8px 8px;
     font-weight: normal;
     color: #999;
-    border-bottom: 1px solid #e1e6eb;
+    border-bottom: solid #e1e6eb 1px;
     background-color: #F5F6FA;
+}
+
+.el-table .el-table__row {
+    border-bottom: solid #e1e6eb 1px;
 }
 
 .el-table td, .el-table th {
     padding-top: 10px;
     padding-bottom: 10px;
+}
+
+.el-table thead tr {
+    color: #999;
+    background-color: #F5F6FA;
 }
 
 .el-table--border td, .el-table--border th {

@@ -20,7 +20,7 @@
         <el-table-column prop="date" label="最后登陆日期" width="120"></el-table-column>
         <el-table-column prop="address" label="地址" show-overflow-tooltip> </el-table-column>
         <el-table-column label="操作" width="250">
-          <template scope="scope">
+          <template solt-scope="scope">
             <el-button size="mini" @click="handleEdit(scope.$index, scope.row)">编辑</el-button>
             <el-button size="mini" @click="handleEdit(scope.$index, scope.row)">设置角色</el-button>
             <el-button size="mini" type="danger" @click="handleDelete(scope.$index, scope.row)">删除</el-button>

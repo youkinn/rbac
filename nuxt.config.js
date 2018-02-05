@@ -55,7 +55,7 @@ module.exports = {
    ** Global CSS '~/node_modules/element-ui/lib/theme-default/index.css',
    * ~/theme/index.css
    */
-  css: ['~/assets/scss/index.scss', '~plugins/libs/swiper/swiper.css'],
+  css: ['~/assets/scss/index.scss', '~plugins/libs/swiper/swiper.css', 'quill/dist/quill.snow.css', 'quill/dist/quill.bubble.css', 'quill/dist/quill.core.css'],
   /*
    ** Add axios globally
    */
@@ -64,7 +64,8 @@ module.exports = {
     '~plugins/filter/',
     '~plugins/directive/',
     '~plugins/utils',
-    { src: '~plugins/libs/swiper/swiper.js', ssr: false }
+    { src: '~plugins/libs/swiper/swiper.js', ssr: false },
+    { src: '~plugins/libs/nuxt-quill-plugin.js', ssr: false }
   ],
 
   build: {

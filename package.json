@@ -32,6 +32,7 @@
     "source-map-support": "^0.4.15",
     "vue": "2.5.2",
     "vue-awesome-swiper": "^2.6.7",
+    "vue-quill-editor": "^3.0.5",
     "vue-server-renderer": "2.5.2",
     "vue-template-compiler": "2.5.2"
   },
