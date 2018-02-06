@@ -24,7 +24,7 @@
       SiteHeader,
       SiteFooter,
       SiteMenu
-    } 
+    }
   }
 </script>
 

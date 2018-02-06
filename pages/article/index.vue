@@ -39,7 +39,11 @@ export default {
   validate ({ query }) {
     return /^\d+$/.test(query.pageIndex)
   },
-  
+  meta: {
+    data: {
+      module: 'blog',
+    }
+  },
   data() {
     return {
       tableData: [],
@@ -49,8 +53,6 @@ export default {
 
   methods: {
     handleEdit(index, row) {
-      debugger;
-      console.log(index, row);
       this.$router.push({
         name: 'article-id',
         params: {id: row._id}

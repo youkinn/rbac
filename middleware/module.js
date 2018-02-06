@@ -1,9 +1,13 @@
 export default ({ store, route, redirect }) => {
-  // Get authorizations for matched routes (with children routes too)
+  if (!store.app.context.isClient) {
+    return 1
+  }
   route.meta.map((meta) => {
-    if (meta.auth && typeof meta.auth.module !== 'undefined') {
-      return meta.auth.authority
+    if (meta.data && typeof meta.data.module !== 'undefined') {
+      document.body.className = 'p-mod-' + meta.data.module
+    } else {
+      document.body.className = ''
     }
-    return 0
+    return 1
   })
 }

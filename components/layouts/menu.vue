@@ -5,8 +5,8 @@
         text-color="#fff" active-text-color="#fff">
       <nuxt-link class="button" to="/">
         <el-menu-item index="1">
-          <i class="el-icon-menu"></i>
-          <span slot="title">首页</span>
+          <i class="el-icon-home"></i>
+          <span slot="title" class="nav-home">首页</span>
         </el-menu-item>
       </nuxt-link>
       <el-submenu index="2">
@@ -16,7 +16,7 @@
         </template>
         <el-menu-item-group v-active>
           <nuxt-link class="button" :to="{name: 'system-dictionary'}">
-            <el-menu-item index="2-1">字典管理</el-menu-item>
+            <el-menu-item index="2-1" class="nav-dictionary">字典管理</el-menu-item>
           </nuxt-link>
         </el-menu-item-group>
       </el-submenu>
@@ -27,13 +27,13 @@
         </template>
         <el-menu-item-group v-active>
           <nuxt-link class="button" :to="{name: 'permission-user'}">
-            <el-menu-item index="3-1">用户管理</el-menu-item>
+            <el-menu-item index="3-1" class="nav-user">用户管理</el-menu-item>
           </nuxt-link>
           <nuxt-link class="button" :to="{name: 'permission-role'}">
-            <el-menu-item index="3-2">角色管理</el-menu-item>
+            <el-menu-item index="3-2" class="nav-role">角色管理</el-menu-item>
           </nuxt-link>
           <nuxt-link class="button" :to="{name: 'permission-menu'}">
-            <el-menu-item index="3-3">菜单管理</el-menu-item>
+            <el-menu-item index="3-3" class="nav-menu">菜单管理</el-menu-item>
           </nuxt-link>
         </el-menu-item-group>
       </el-submenu>
@@ -44,10 +44,10 @@
         </template>
         <el-menu-item-group v-active>
           <nuxt-link class="button" :to="{name: 'article', query: { pageIndex: 1}}">
-            <el-menu-item index="4-1">文章管理</el-menu-item>
+            <el-menu-item index="4-1" class="nav-article">文章管理</el-menu-item>
           </nuxt-link>
           <nuxt-link class="button" :to="{name: 'message'}">
-            <el-menu-item index="4-2">留言管理</el-menu-item>
+            <el-menu-item index="4-2" class="nav-message">留言管理</el-menu-item>
           </nuxt-link>
         </el-menu-item-group>
       </el-submenu>

@@ -55,11 +55,12 @@
 <script>
 export default {
   validate ({ params }) {
-    debugger;
     return /^\d+$/.test(params.id)
   },
   meta: {
-    auth: { module: 'acticle' }
+    data: {
+      module: 'acticle'
+    }
   },
   data() {
     return {

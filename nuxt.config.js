@@ -34,7 +34,7 @@ module.exports = {
   },
 
   router: {
-    middleware: ['ssr-cookie'],
+    middleware: ['ssr-cookie', 'module'],
     linkActiveClass: 'active'
   },
   modules: [
