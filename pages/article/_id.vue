@@ -6,9 +6,9 @@
     </el-breadcrumb>
     <el-row>
       <el-col :span="16">
-        <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm" :inline-message="true" :status-icon="true">
+        <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm" :inline-message="false">
           <el-form-item label="文章标题" prop="title">
-            <el-input v-model="ruleForm.title"></el-input>
+            <el-input v-model="ruleForm.title" placeholder="请输入文章标题" :maxlength="20"></el-input>
           </el-form-item>
           <el-form-item label="文章分类" prop="category">
             <el-select v-model="ruleForm.category" placeholder="请选择文章分类">
@@ -18,22 +18,20 @@
           </el-form-item>
           <el-form-item label="内容" prop="content">
             <div class="quill-editor" 
-                :content="content"
-                @change="onEditorChange($event)"
-                @blur="onEditorBlur($event)"
-                @focus="onEditorFocus($event)"
-                @ready="onEditorReady($event)"
-                v-quill:myQuillEditor="editorOption">
+              :content="content"
+              @change="onEditorChange($event)"
+              @blur="onEditorBlur($event, 'ruleForm')"
+              v-quill:myQuillEditor="editorOption">
             </div>
           </el-form-item>
           <el-form-item label="是否原创" prop="isOriginal">
             <el-switch v-model="ruleForm.isOriginal"></el-switch>
           </el-form-item>
-          <el-form-item label="来源" prop="source">
-            <el-input v-model="ruleForm.source"></el-input>
+          <el-form-item label="来源" prop="source" v-if="!ruleForm.isOriginal">
+            <el-input v-model="ruleForm.source" placeholder="请输入来源" :maxlength="10"></el-input>
           </el-form-item>
           <el-form-item>
-            <el-button type="primary" @click="submitForm('ruleForm')">立即创建</el-button>
+            <el-button type="primary" @click="submitForm('ruleForm')">保存</el-button>
             <el-button @click="resetForm('ruleForm')">重置</el-button>
           </el-form-item>
         </el-form>
@@ -47,7 +45,8 @@
   text-align: center;
 }
 .quill-editor {
-  min-height: 200px;
+  line-height: 24px;
+  min-height: 350px;
   max-height: 600px;
   overflow-y: auto;
 }
@@ -55,9 +54,16 @@
 
 <script>
 export default {
+  validate ({ params }) {
+    debugger;
+    return /^\d+$/.test(params.id)
+  },
+  meta: {
+    auth: { module: 'acticle' }
+  },
   data() {
     return {
-      content: "<p>I am Example</p>",
+      content: '',
       editorOption: {
         modules: {
           toolbar: [
@@ -76,65 +82,65 @@ export default {
             ['clean'],
             ['link', 'image', 'video']
           ]
-        }
+        },
+        placeholder: '请输入文章内容'
       },
       ruleForm: {
         title: '',
         category: '',
+        content: '',
         isOriginal: false,
-        type: [],
-        resource: '',
-        desc: ''
+        source: ''
       },
       rules: {
-        title: [
-          { required: true, message: "请输入文章标题", trigger: "blur" },
-          { min: 3, max: 20, message: "长度在 3 到 20 个字符", trigger: "blur" }
-        ],
+        title: [{ required: true, message: '请输入文章标题', trigger: 'blur' }],
         category: [
-          { required: true, message: "请选择文章分类", trigger: "change" }
+          { required: true, message: '请选择文章分类', trigger: 'blur' }
+        ],
+        content: [
+          { required: true, message: '请输入文章内容', trigger: 'blur' },
+          {
+            max: 10000,
+            message: '长度在10000 个字符以内',
+            trigger: 'blur'
+          }
         ],
         source: [
-          { required: true, message: "请输入文章来源", trigger: "blur" },
-          { min: 3, max: 20, message: "长度在 3 到 20 个字符", trigger: "blur" }
+          { required: false, message: '请输入文章来源', trigger: 'blur' }
         ]
       }
     };
   },
   methods: {
     submitForm(formName) {
+      this.ruleForm.content = this.content;
       this.$refs[formName].validate(valid => {
-        if (valid) {
-          alert("submit!");
-        } else {
-          console.log("error submit!!");
+        if (!valid) {
+          console.log('error submit!!');
           return false;
         }
+        this.$message({
+          message: '保存成功',
+          type: 'success'
+        });
+        setTimeout(() => {
+          this.$router.push({
+            name: 'article'
+          });
+        }, 3000);
       });
     },
     resetForm(formName) {
       this.$refs[formName].resetFields();
     },
-    getContent() {},
-    onEditorBlur(editor) {
-      console.log("editor blur!", editor);
-    },
-    onEditorFocus(editor) {
-      console.log("editor focus!", editor);
-    },
-    onEditorReady(editor) {
-      console.log("editor ready!", editor);
+    onEditorBlur(editor, formName) {
+      this.$refs[formName].validateField('content');
     },
     onEditorChange({ editor, html, text }) {
-      console.log("editor change!", editor, html, text);
       this.content = html;
+      this.ruleForm.content = html;
     }
   },
-  mounted() {
-    console.log("app init, my quill insrance object is:", this.myQuillEditor);
-    setTimeout(() => {
-      this.content = "i am changed";
-    }, 3000);
-  }
+  mounted() {}
 };
 </script>

@@ -15,7 +15,7 @@
           <span slot="title">系统管理</span>
         </template>
         <el-menu-item-group v-active>
-          <nuxt-link class="button" to="/system/dictionary">
+          <nuxt-link class="button" :to="{name: 'system-dictionary'}">
             <el-menu-item index="2-1">字典管理</el-menu-item>
           </nuxt-link>
         </el-menu-item-group>
@@ -26,13 +26,13 @@
           <span slot="title">权限管理</span>
         </template>
         <el-menu-item-group v-active>
-          <nuxt-link class="button" to="/permission/user">
+          <nuxt-link class="button" :to="{name: 'permission-user'}">
             <el-menu-item index="3-1">用户管理</el-menu-item>
           </nuxt-link>
-          <nuxt-link class="button" to="/permission/role">
+          <nuxt-link class="button" :to="{name: 'permission-role'}">
             <el-menu-item index="3-2">角色管理</el-menu-item>
           </nuxt-link>
-          <nuxt-link class="button" to="/permission/menu">
+          <nuxt-link class="button" :to="{name: 'permission-menu'}">
             <el-menu-item index="3-3">菜单管理</el-menu-item>
           </nuxt-link>
         </el-menu-item-group>
@@ -43,10 +43,10 @@
           <span slot="title">博客管理</span>
         </template>
         <el-menu-item-group v-active>
-          <nuxt-link class="button" to="/article">
+          <nuxt-link class="button" :to="{name: 'article', query: { pageIndex: 1}}">
             <el-menu-item index="4-1">文章管理</el-menu-item>
           </nuxt-link>
-          <nuxt-link class="button" to="/message">
+          <nuxt-link class="button" :to="{name: 'message'}">
             <el-menu-item index="4-2">留言管理</el-menu-item>
           </nuxt-link>
         </el-menu-item-group>

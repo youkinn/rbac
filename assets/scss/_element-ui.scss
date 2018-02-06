@@ -66,3 +66,17 @@ thead .tr {
 .el-table__body-wrapper {
     overflow-x: hidden;
 }
+
+.el-input__inner {
+    border-color: #ccc;
+}
+
+.el-form .el-form-item__error {
+    left: auto;
+    right: -100px;
+    top: 0;
+    bottom: 0;
+    height: 40px;
+    line-height: 40px;
+    padding: 0;
+}

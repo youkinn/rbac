@@ -26,12 +26,6 @@ h6 {
     font-family: Helvetica Neue, Luxi Sans, DejaVu Sans, Tahoma, Hiragino Sans GB, STHeiti, Microsoft YaHei;
 }
 
-// footer
-// {
-//   padding: 20px;
-//   text-align: center;
-//   border-top: 1px solid #ddd;
-// }
 a,
 a:hover,
 a:focus,
@@ -68,4 +62,17 @@ a:visited {
     margin-bottom: 20px;
     padding-bottom: 20px;
     border-bottom: solid #e6ebf5 1px;
+}
+
+/* 富文本 */
+/* toolbar */
+.el-form .ql-toolbar.ql-snow .ql-formats {
+    line-height: 22px;
+}
+
+/* placeholder */
+.el-form .ql-editor.ql-blank:before {
+    color: #b4bccc;
+    font-style: normal;
+    font-size: 14px;
 }

@@ -36,6 +36,10 @@
 
 <script>
 export default {
+  validate ({ query }) {
+    return /^\d+$/.test(query.pageIndex)
+  },
+  
   data() {
     return {
       tableData: [],
@@ -45,7 +49,12 @@ export default {
 
   methods: {
     handleEdit(index, row) {
+      debugger;
       console.log(index, row);
+      this.$router.push({
+        name: 'article-id',
+        params: {id: row._id}
+      });
     },
     handleDelete(index, row) {
       console.log(index, row);
@@ -58,8 +67,10 @@ export default {
     }
   },
   mounted() {
+    console.log(this.$route.query.pageIndex);
     this.tableData = [
       {
+        _id: 1,
         title: "标题",
         categoryDesc: "js",
         source: "腾讯网",
@@ -67,6 +78,7 @@ export default {
         publishTime: "2018-02-05 10:09:26"
       },
       {
+        _id: 2,
         title: "标题",
         categoryDesc: "js",
         source: "腾讯网",
@@ -74,6 +86,7 @@ export default {
         publishTime: "2018-02-05 10:09:26"
       },
       {
+        _id: 3,
         title: "标题",
         categoryDesc: "js",
         source: "腾讯网",
@@ -81,6 +94,7 @@ export default {
         publishTime: "2018-02-05 10:09:26"
       },
       {
+        _id: 4,
         title: "标题",
         categoryDesc: "js",
         source: "腾讯网",
@@ -88,6 +102,7 @@ export default {
         publishTime: "2018-02-05 10:09:26"
       },
       {
+        _id: 5,
         title: "标题",
         categoryDesc: "js",
         source: "腾讯网",
@@ -95,6 +110,7 @@ export default {
         publishTime: "2018-02-05 10:09:26"
       },
       {
+        _id: 6,
         title: "标题",
         categoryDesc: "js",
         source: "腾讯网",
@@ -102,6 +118,7 @@ export default {
         publishTime: "2018-02-05 10:09:26"
       },
       {
+        _id: 7,
         title: "标题",
         categoryDesc: "js",
         source: "腾讯网",
@@ -109,6 +126,7 @@ export default {
         publishTime: "2018-02-05 10:09:26"
       },
       {
+        _id: 8,
         title: "标题",
         categoryDesc: "js",
         source: "腾讯网",
@@ -116,6 +134,7 @@ export default {
         publishTime: "2018-02-05 10:09:26"
       },
       {
+        _id: 9,
         title: "标题",
         categoryDesc: "js",
         source: "腾讯网",
@@ -123,6 +142,7 @@ export default {
         publishTime: "2018-02-05 10:09:26"
       },
       {
+        _id: 10,
         title: "标题",
         categoryDesc: "js",
         source: "腾讯网",
@@ -137,6 +157,10 @@ export default {
 <style lang="scss" scoped>
 .btn-area {
   margin-bottom: 15px;
+  & > a,
+  & > button {
+    margin-right: 10px;
+  }
 }
 .pagination-area {
   margin-top: 15px;
