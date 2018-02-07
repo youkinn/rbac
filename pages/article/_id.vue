@@ -49,13 +49,15 @@
 </style>
 
 <script>
+import { getArticleById } from '../../api/article';
+
 export default {
   validate ({ params }) {
     return /^\d+$/.test(params.id);
   },
   meta: {
     data: {
-      module: 'acticle'
+      module: 'article'
     }
   },
   data () {
@@ -136,8 +138,17 @@ export default {
     onEditorChange ({ editor, html, text }) {
       this.content = html;
       this.ruleForm.content = html;
+    },
+    async getDetail (aid) {
+      const result = await getArticleById({
+        _id: aid
+      });
+      this.content = result.data.content;
+      this.ruleForm = result.data;
     }
   },
-  mounted () {}
+  mounted () {
+    this.getDetail(this.$route.params.id);
+  }
 };
 </script>

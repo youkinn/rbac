@@ -42,7 +42,7 @@
           <span slot="title">博客管理</span>
         </template>
         <el-menu-item-group v-active>
-          <nuxt-link class="button" :to="{name: 'article', query: { pageIndex: 1}}">
+          <nuxt-link class="button" :to="{name: 'article'}">
             <el-menu-item index="4-1" class="nav-article">文章管理</el-menu-item>
           </nuxt-link>
           <nuxt-link class="button" :to="{name: 'message'}">
@@ -77,5 +77,5 @@
 </style>
 
 <script>
-export default {}
+export default {};
 </script>

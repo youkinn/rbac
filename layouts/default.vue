@@ -1,15 +1,15 @@
 <template>
   <div class="site">
-    <header class="site-header">
+    <div class="site-header">
       <site-header/>
-    </header>
+    </div>
     <div class="site-content clearfix">
-      <asile class="site-aside fl" ref="aside">
+      <div class="site-aside fl" ref="aside">
         <site-menu />
-      </asile>
-      <section class="site-main">
+      </div>
+      <div class="site-main">
         <nuxt/>
-      </section>
+      </div>
     </div>
   </div>
 </template>

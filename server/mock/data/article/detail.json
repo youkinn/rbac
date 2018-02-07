@@ -1,0 +1,22 @@
+/**
+ * 分页获取文章列表
+ *
+ * @url /getArticleById
+ *
+ * 参数说明：
+ * _id: 文章id
+ *
+ */
+{
+  "code": 0,
+  "data|10": {
+    "_id": 1,
+    "title|1-10": "@ctitle",
+    "categoryDesc|2-4": "@cword",
+    "content": "@csentence",
+    "source|2-8": "@cword",
+    "isOriginal|1": [true, false],
+    "state|1": [0, 1], // 0:未发布 1：已发布
+    "publishTime": "@date('yyyy-MM-dd')"
+  }
+}
