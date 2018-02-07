@@ -22,7 +22,7 @@
   color: #fff;
   background: #373d41;
 }
-.logo{
+.logo {
   width: 400px;
   height: 50px;
   &__icon {

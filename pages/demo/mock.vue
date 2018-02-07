@@ -7,22 +7,22 @@
 </template>
 
 <script>
-import { getUserInfo } from "../../api/demo";
+import { getUserInfo } from '../../api/demo'
 export default {
   data() {
     return {
       user: {}
-    };
+    }
   },
   methods: {
     getUserInfo
   },
   mounted() {
     this.getUserInfo().then(data => {
-      this.user = data.data;
-    });
+      this.user = data.data
+    })
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>

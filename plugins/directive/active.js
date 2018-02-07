@@ -4,4 +4,4 @@ export default {
       ele.parentElement.style.display = 'block';
     }
   }
-}
+};

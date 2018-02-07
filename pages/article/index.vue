@@ -27,8 +27,7 @@
         </el-table-column>
       </el-table>
       <div class="pagination-area clearfix">
-        <el-pagination class="fr" background layout="total, prev, pager, next, jumper" :total="tableData.length" 
-          @size-change="handleSizeChange" @current-change="handleCurrentChange"></el-pagination>
+        <el-pagination class="fr" background layout="total, prev, pager, next, jumper" :total="tableData.length" @size-change="handleSizeChange" @current-change="handleCurrentChange"></el-pagination>
       </div>
     </div>
   </el-row>
@@ -37,14 +36,14 @@
 <script>
 export default {
   validate ({ query }) {
-    return /^\d+$/.test(query.pageIndex)
+    return /^\d+$/.test(query.pageIndex);
   },
   meta: {
     data: {
-      module: 'blog',
+      module: 'blog'
     }
   },
-  data() {
+  data () {
     return {
       tableData: [],
       multipleSelection: []
@@ -52,104 +51,104 @@ export default {
   },
 
   methods: {
-    handleEdit(index, row) {
+    handleEdit (index, row) {
       this.$router.push({
         name: 'article-id',
-        params: {id: row._id}
+        params: { id: row._id }
       });
     },
-    handleDelete(index, row) {
+    handleDelete (index, row) {
       console.log(index, row);
     },
-    handleSizeChange(val) {
+    handleSizeChange (val) {
       console.log(`每页 ${val} 条`);
     },
-    handleCurrentChange(val) {
+    handleCurrentChange (val) {
       console.log(`当前页: ${val}`);
     }
   },
-  mounted() {
+  mounted () {
     console.log(this.$route.query.pageIndex);
     this.tableData = [
       {
         _id: 1,
-        title: "标题",
-        categoryDesc: "js",
-        source: "腾讯网",
-        state: "0",
-        publishTime: "2018-02-05 10:09:26"
+        title: '标题',
+        categoryDesc: 'js',
+        source: '腾讯网',
+        state: '0',
+        publishTime: '2018-02-05 10:09:26'
       },
       {
         _id: 2,
-        title: "标题",
-        categoryDesc: "js",
-        source: "腾讯网",
-        state: "0",
-        publishTime: "2018-02-05 10:09:26"
+        title: '标题',
+        categoryDesc: 'js',
+        source: '腾讯网',
+        state: '0',
+        publishTime: '2018-02-05 10:09:26'
       },
       {
         _id: 3,
-        title: "标题",
-        categoryDesc: "js",
-        source: "腾讯网",
-        state: "0",
-        publishTime: "2018-02-05 10:09:26"
+        title: '标题',
+        categoryDesc: 'js',
+        source: '腾讯网',
+        state: '0',
+        publishTime: '2018-02-05 10:09:26'
       },
       {
         _id: 4,
-        title: "标题",
-        categoryDesc: "js",
-        source: "腾讯网",
-        state: "0",
-        publishTime: "2018-02-05 10:09:26"
+        title: '标题',
+        categoryDesc: 'js',
+        source: '腾讯网',
+        state: '0',
+        publishTime: '2018-02-05 10:09:26'
       },
       {
         _id: 5,
-        title: "标题",
-        categoryDesc: "js",
-        source: "腾讯网",
-        state: "0",
-        publishTime: "2018-02-05 10:09:26"
+        title: '标题',
+        categoryDesc: 'js',
+        source: '腾讯网',
+        state: '0',
+        publishTime: '2018-02-05 10:09:26'
       },
       {
         _id: 6,
-        title: "标题",
-        categoryDesc: "js",
-        source: "腾讯网",
-        state: "0",
-        publishTime: "2018-02-05 10:09:26"
+        title: '标题',
+        categoryDesc: 'js',
+        source: '腾讯网',
+        state: '0',
+        publishTime: '2018-02-05 10:09:26'
       },
       {
         _id: 7,
-        title: "标题",
-        categoryDesc: "js",
-        source: "腾讯网",
-        state: "0",
-        publishTime: "2018-02-05 10:09:26"
+        title: '标题',
+        categoryDesc: 'js',
+        source: '腾讯网',
+        state: '0',
+        publishTime: '2018-02-05 10:09:26'
       },
       {
         _id: 8,
-        title: "标题",
-        categoryDesc: "js",
-        source: "腾讯网",
-        state: "0",
-        publishTime: "2018-02-05 10:09:26"
+        title: '标题',
+        categoryDesc: 'js',
+        source: '腾讯网',
+        state: '0',
+        publishTime: '2018-02-05 10:09:26'
       },
       {
         _id: 9,
-        title: "标题",
-        categoryDesc: "js",
-        source: "腾讯网",
-        state: "0",
-        publishTime: "2018-02-05 10:09:26"
+        title: '标题',
+        categoryDesc: 'js',
+        source: '腾讯网',
+        state: '0',
+        publishTime: '2018-02-05 10:09:26'
       },
       {
         _id: 10,
-        title: "标题",
-        categoryDesc: "js",
-        source: "腾讯网",
-        state: "0",
-        publishTime: "2018-02-05 10:09:26"
+        title: '标题',
+        categoryDesc: 'js',
+        source: '腾讯网',
+        state: '0',
+        publishTime: '2018-02-05 10:09:26'
       }
     ];
   }

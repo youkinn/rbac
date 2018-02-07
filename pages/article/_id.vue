@@ -1,5 +1,5 @@
 <template>
-   <el-row>
+  <el-row>
     <el-breadcrumb separator-class="el-icon-arrow-right">
       <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
       <el-breadcrumb-item>文章标题</el-breadcrumb-item>
@@ -17,11 +17,7 @@
             </el-select>
           </el-form-item>
           <el-form-item label="内容" prop="content">
-            <div class="quill-editor" 
-              :content="content"
-              @change="onEditorChange($event)"
-              @blur="onEditorBlur($event, 'ruleForm')"
-              v-quill:myQuillEditor="editorOption">
+            <div class="quill-editor" :content="content" @change="onEditorChange($event)" @blur="onEditorBlur($event, 'ruleForm')" v-quill:myQuillEditor="editorOption">
             </div>
           </el-form-item>
           <el-form-item label="是否原创" prop="isOriginal">
@@ -55,14 +51,14 @@
 <script>
 export default {
   validate ({ params }) {
-    return /^\d+$/.test(params.id)
+    return /^\d+$/.test(params.id);
   },
   meta: {
     data: {
       module: 'acticle'
     }
   },
-  data() {
+  data () {
     return {
       content: '',
       editorOption: {
@@ -113,7 +109,7 @@ export default {
     };
   },
   methods: {
-    submitForm(formName) {
+    submitForm (formName) {
       this.ruleForm.content = this.content;
       this.$refs[formName].validate(valid => {
         if (!valid) {
@@ -131,17 +127,17 @@ export default {
         }, 3000);
       });
     },
-    resetForm(formName) {
+    resetForm (formName) {
       this.$refs[formName].resetFields();
     },
-    onEditorBlur(editor, formName) {
+    onEditorBlur (editor, formName) {
       this.$refs[formName].validateField('content');
     },
-    onEditorChange({ editor, html, text }) {
+    onEditorChange ({ editor, html, text }) {
       this.content = html;
       this.ruleForm.content = html;
     }
   },
-  mounted() {}
+  mounted () {}
 };
 </script>

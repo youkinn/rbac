@@ -1,21 +1,21 @@
 const timeFlier = (val, fmt) => {
-  let date
+  let date;
 
   if (!val) {
-    return val
+    return val;
   }
   // 当传入的是时间戳或国际时间等 单独处理
   if (typeof val === 'number') {
-    date = new Date(val)
+    date = new Date(val);
   } else if (typeof val === 'string' && val.indexOf('-') > -1) {
-    date = new Date(val.replace(/-/g, '/'))
+    date = new Date(val.replace(/-/g, '/'));
   } else {
-    date = val
+    date = val;
   }
 
   //
   if (typeof date === 'object' && typeof date.getDate !== 'function') {
-    return val
+    return val;
   }
 
   const o = {
@@ -25,20 +25,28 @@ const timeFlier = (val, fmt) => {
     'm+': date.getMinutes(),
     's+': date.getSeconds(),
     'q+': Math.floor((date.getMonth() + 3) / 3),
-    'S': date.getMilliseconds()
-  }
+    S: date.getMilliseconds()
+  };
 
   if (/(y+)/.test(fmt)) {
-    fmt = fmt.replace(RegExp.$1, (`${date.getFullYear()}`).substr(4 - RegExp.$1.length))
+    fmt = fmt.replace(
+      RegExp.$1,
+      `${date.getFullYear()}`.substr(4 - RegExp.$1.length)
+    );
   }
 
-  Object.keys(o).forEach((key) => {
+  Object.keys(o).forEach(key => {
     if (new RegExp(`(${key})`).test(fmt)) {
-      fmt = fmt.replace(RegExp.$1, (RegExp.$1.length === 1) ? (o[key]) : ((`00${o[key]}`).substr((`${o[key]}`).length)))
+      fmt = fmt.replace(
+        RegExp.$1,
+        RegExp.$1.length === 1
+          ? o[key]
+          : `00${o[key]}`.substr(`${o[key]}`.length)
+      );
     }
-  })
+  });
 
-  return fmt
-}
+  return fmt;
+};
 
-export default timeFlier
+export default timeFlier;

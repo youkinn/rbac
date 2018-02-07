@@ -1,11 +1,11 @@
-import Vue from 'vue'
-import active from './active'
+import Vue from 'vue';
+import active from './active';
 
 const directives = {
-  'active': active
-}
+  active: active
+};
 
-Object.keys(directives).forEach((key) => {
-  console.log(directives[key])
-  Vue.directive(key, directives[key])
-})
+Object.keys(directives).forEach(key => {
+  console.log(directives[key]);
+  Vue.directive(key, directives[key]);
+});

@@ -1,4 +1,4 @@
-import Vue from 'vue'
+import Vue from 'vue';
 
 /**
  * [LazyLoadPic]
@@ -9,7 +9,7 @@ import Vue from 'vue'
  */
 
 function LazyLoadPic (url = {}) {
-  return Vue.filter('imgCdn')(url)
+  return Vue.filter('imgCdn')(url);
 }
 
 /**
@@ -21,15 +21,21 @@ function LazyLoadPic (url = {}) {
  * @return 	{Object}  newObject [处理后的新对象]
  */
 function ObjectMap (obj = {}) {
-  let newObject = {}
+  let newObject = {};
 
   for (let key of Object.keys(obj)) {
-    const value = obj[key]
-    if (typeof value !== 'undefined' && value !== '' && value !== null && !Number.isNaN(value) && value !== -1) {
-      newObject[key] = value
+    const value = obj[key];
+    if (
+      typeof value !== 'undefined' &&
+      value !== '' &&
+      value !== null &&
+      !Number.isNaN(value) &&
+      value !== -1
+    ) {
+      newObject[key] = value;
     }
   }
-  return newObject
+  return newObject;
 }
 
 /**
@@ -45,37 +51,37 @@ function ArrayFind () {
       value: function (predicate) {
         // 1. Let O be ? ToObject(this value).
         if (this == null) {
-          throw new TypeError('"this" is null or not defined')
+          throw new TypeError('"this" is null or not defined');
         }
-        var o = Object(this)
+        var o = Object(this);
         // 2. Let len be ? ToLength(? Get(O, "length")).
-        var len = o.length >>> 0
+        var len = o.length >>> 0;
         // 3. If IsCallable(predicate) is false, throw a TypeError exception.
         if (typeof predicate !== 'function') {
-          throw new TypeError('predicate must be a function')
+          throw new TypeError('predicate must be a function');
         }
         // 4. If thisArg was supplied, let T be thisArg; else let T be undefined.
-        var thisArg = arguments[1]
+        var thisArg = arguments[1];
 
         // 5. Let k be 0.
-        var k = 0
+        var k = 0;
         // 6. Repeat, while k < len
         while (k < len) {
           // a. Let Pk be ! ToString(k).
           // b. Let kValue be ? Get(O, Pk).
           // c. Let testResult be ToBoolean(? Call(predicate, T, « kValue, k, O »)).
           // d. If testResult is true, return kValue.
-          var kValue = o[k]
+          var kValue = o[k];
           if (predicate.call(thisArg, kValue, k, o)) {
-            return kValue
+            return kValue;
           }
           // e. Increase k by 1.
-          k++
+          k++;
         }
         // 7. Return undefined.
-        return undefined
+        return undefined;
       }
-    })
+    });
   }
 }
 
@@ -93,29 +99,29 @@ function ArrayIncludes () {
       value: function (searchElement, fromIndex) {
         // 1. Let O be ? ToObject(this value).
         if (this == null) {
-          throw new TypeError('"this" is null or not defined')
+          throw new TypeError('"this" is null or not defined');
         }
 
-        var o = Object(this)
+        var o = Object(this);
 
         // 2. Let len be ? ToLength(? Get(O, "length")).
-        var len = o.length >>> 0
+        var len = o.length >>> 0;
 
         // 3. If len is 0, return false.
         if (len === 0) {
-          return false
+          return false;
         }
 
         // 4. Let n be ? ToInteger(fromIndex).
         //    (If fromIndex is undefined, this step produces the value 0.)
-        var n = fromIndex | 0
+        var n = fromIndex | 0;
 
         // 5. If n ≥ 0, then
         //  a. Let k be n.
         // 6. Else n < 0,
         //  a. Let k be len + n.
         //  b. If k < 0, let k be 0.
-        var k = Math.max(n >= 0 ? n : len - Math.abs(n), 0)
+        var k = Math.max(n >= 0 ? n : len - Math.abs(n), 0);
 
         // 7. Repeat, while k < len
         while (k < len) {
@@ -124,15 +130,15 @@ function ArrayIncludes () {
           // c. Increase k by 1.
           // NOTE: === provides the correct "SameValueZero" comparison needed here.
           if (o[k] === searchElement) {
-            return true
+            return true;
           }
-          k++
+          k++;
         }
 
         // 8. Return false
-        return false
+        return false;
       }
-    })
+    });
   }
 }
 
@@ -148,21 +154,15 @@ function offset (el, target) {
   let offset = {
     top: 0,
     left: 0
-  }
+  };
 
   while (el && el !== target) {
-    offset.top += el.offsetTop
-    offset.left += el.offsetLeft
+    offset.top += el.offsetTop;
+    offset.left += el.offsetLeft;
 
-    el = el.offsetParent
+    el = el.offsetParent;
   }
 
-  return offset
+  return offset;
 }
-export {
-  LazyLoadPic,
-  ObjectMap,
-  ArrayFind,
-  offset,
-  ArrayIncludes
-}
+export { LazyLoadPic, ObjectMap, ArrayFind, offset, ArrayIncludes };

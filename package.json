@@ -54,6 +54,9 @@
     "express-mockjs": "^0.2.1",
     "morgan": "1.8.2",
     "node-sass": "^4.5.3",
-    "sass-loader": "^6.0.6"
+    "prettier-stylelint": "^0.4.2",
+    "sass-loader": "^6.0.6",
+    "stylelint": "^8.4.0",
+    "stylelint-config-ydj": "^0.0.1"
   }
 }

@@ -1,11 +1,11 @@
-import address from '~/config/index'
+import address from '~/config/index';
 
-const imgCdn = (val) => {
+const imgCdn = val => {
   if (val) {
-    return address.IMG_ADDRESS + val
+    return address.IMG_ADDRESS + val;
   } else {
-    return val
+    return val;
   }
-}
+};
 
-export default imgCdn
+export default imgCdn;
