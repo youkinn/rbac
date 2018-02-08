@@ -1,14 +1,14 @@
 <template>
   <div class="site">
     <div class="site-header">
-      <site-header/>
+      <site-header />
     </div>
     <div class="site-content clearfix">
       <div class="site-aside fl" ref="aside">
         <site-menu />
       </div>
       <div class="site-main">
-        <nuxt/>
+        <nuxt />
       </div>
     </div>
   </div>

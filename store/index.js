@@ -1,12 +1,12 @@
-import Vuex from 'vuex'
-import user from './user'
+import Vuex from 'vuex';
+// import user from './user'
 
 const createStroe = () => {
   return new Vuex.Store({
     modules: {
-      user
+      // user
     }
-  })
-}
+  });
+};
 
-export default createStroe
+export default createStroe;

@@ -2337,13 +2337,14 @@ element-theme@^2.0.0:
     ora "^0.3.0"
     run-sequence "^1.2.2"
 
-element-ui@^2.0.3:
-  version "2.0.5"
-  resolved "http://registry.npm.taobao.org/element-ui/download/element-ui-2.0.5.tgz#e001cb3514d8303a54f2b7d893b916acfc9ac57d"
+element-ui@2.1.0:
+  version "2.1.0"
+  resolved "http://registry.npm.taobao.org/element-ui/download/element-ui-2.1.0.tgz#eec860e3d3b131e61c2974a3e2b19a689d040f14"
   dependencies:
     async-validator "~1.8.1"
     babel-helper-vue-jsx-merge-props "^2.0.0"
     deepmerge "^1.2.0"
+    normalize-wheel "^1.0.1"
     throttle-debounce "^1.0.1"
 
 elliptic@^6.0.0:
@@ -5424,6 +5425,10 @@ normalize-url@^1.4.0, normalize-url@^1.9.1:
     prepend-http "^1.0.0"
     query-string "^4.1.0"
     sort-keys "^1.0.0"
+
+normalize-wheel@^1.0.1:
+  version "1.0.1"
+  resolved "http://registry.npm.taobao.org/normalize-wheel/download/normalize-wheel-1.0.1.tgz#aec886affdb045070d856447df62ecf86146ec45"
 
 npm-run-path@^2.0.0:
   version "2.0.2"

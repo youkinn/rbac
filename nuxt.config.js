@@ -1,4 +1,4 @@
-const address = require('./config')
+const address = require('./config');
 
 // console.log('address', address)
 // console.log('process.env.NODE_CONFIG', process.env.NODE_CONFIG)
@@ -15,31 +15,36 @@ module.exports = {
    */
   head: {
     title: 'NUXT-TEMPLATE',
-    meta: [{
-      charset: 'utf-8'
-    }, {
-      hid: 'keyword',
-      name: 'keyword',
-      content: 'Universal Vue.js Application Framework'
-    }, {
-      hid: 'description',
-      name: 'description',
-      content: 'Nuxt.js 十分简单易用。一个简单的项目只需将 nuxt 添加为依赖组件即可。'
-    }],
-    link: [{
-      rel: 'icon',
-      type: 'image/x-icon',
-      href: address.CDN_ADDRESS + '/favicon.ico'
-    }]
+    meta: [
+      {
+        charset: 'utf-8'
+      },
+      {
+        hid: 'keyword',
+        name: 'keyword',
+        content: 'Universal Vue.js Application Framework'
+      },
+      {
+        hid: 'description',
+        name: 'description',
+        content:
+          'Nuxt.js 十分简单易用。一个简单的项目只需将 nuxt 添加为依赖组件即可。'
+      }
+    ],
+    link: [
+      {
+        rel: 'icon',
+        type: 'image/x-icon',
+        href: address.CDN_ADDRESS + '/favicon.ico'
+      }
+    ]
   },
 
   router: {
     middleware: ['ssr-cookie', 'module'],
     linkActiveClass: 'active'
   },
-  modules: [
-    ['@nuxtjs/proxy']
-  ],
+  modules: [['@nuxtjs/proxy']],
   proxy: {
     '/api': {
       target: address.SERVER_ADDRESS,
@@ -55,7 +60,13 @@ module.exports = {
    ** Global CSS '~/node_modules/element-ui/lib/theme-default/index.css',
    * ~/theme/index.css
    */
-  css: ['~/assets/scss/index.scss', '~plugins/libs/swiper/swiper.css', 'quill/dist/quill.snow.css', 'quill/dist/quill.bubble.css', 'quill/dist/quill.core.css'],
+  css: [
+    '~/assets/scss/index.scss',
+    'quill/dist/quill.snow.css',
+    'quill/dist/quill.bubble.css',
+    'quill/dist/quill.core.css',
+    '~plugins/libs/swiper/swiper.css'
+  ],
   /*
    ** Add axios globally
    */
@@ -76,10 +87,15 @@ module.exports = {
     vendor: ['axios', 'element-ui'],
     babel: {
       plugins: [
-        ['component', [{
-          libraryName: 'element-ui',
-          styleLibraryName: 'theme-chalk'
-        }]]
+        [
+          'component',
+          [
+            {
+              libraryName: 'element-ui',
+              styleLibraryName: 'theme-chalk'
+            }
+          ]
+        ]
       ]
     },
     publicPath: address.CDN_ADDRESS
@@ -87,14 +103,14 @@ module.exports = {
   /*
    ** Run ESLINT on save
    */
-  extend(config, ctx) {
+  extend (config, ctx) {
     if (ctx.isClient) {
       config.module.rules.push({
         enforce: 'pre',
         test: /\.(js|vue)$/,
         loader: 'eslint-loader',
         exclude: /(node_modules)/
-      })
+      });
     }
   }
-}
+};

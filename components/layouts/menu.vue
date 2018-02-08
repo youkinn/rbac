@@ -42,7 +42,7 @@
           <span slot="title">博客管理</span>
         </template>
         <el-menu-item-group v-active>
-          <nuxt-link class="button" :to="{name: 'article'}">
+          <nuxt-link class="button" :to="{name: 'article-list-page', params: { page: 1}}">
             <el-menu-item index="4-1" class="nav-article">文章管理</el-menu-item>
           </nuxt-link>
           <nuxt-link class="button" :to="{name: 'message'}">

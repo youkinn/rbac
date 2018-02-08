@@ -43,11 +43,14 @@ thead .tr {
     font-weight: normal;
     color: #999;
     border-bottom: solid #e1e6eb 1px;
-    background-color: #F5F6FA;
 }
 
 .el-table .el-table__row {
     border-bottom: solid #e1e6eb 1px;
+}
+
+.el-table th {
+  background-color: #F5F6FA;
 }
 
 .el-table td, .el-table th {
@@ -61,10 +64,21 @@ thead .tr {
 }
 
 .el-table--border td, .el-table--border th {
-    border: none;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+}
+
+.el-table--enable-row-hover .el-table__body tr:hover>td {
+  background-color: #f5f7fa;
 }
 
 .el-table .cell {
+    font-size: 12px;
+    color: #666;
+}
+
+.el-table .cell .title {
     font-size: 12px;
     color: #666;
 }
