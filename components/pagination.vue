@@ -13,7 +13,7 @@
 
 <script>
 export default {
-  props: ['pageName', 'pageIndex', 'total'],
+  props: ['route', 'pageIndex', 'total'],
   computed: {
     currentPage: {
       get () {
@@ -24,10 +24,10 @@ export default {
   },
   methods: {
     goPage (pageIndex) {
-      this.$router.push({
-        name: this.pageName,
+      const route = Object.assign({}, this.route, {
         params: { page: pageIndex }
       });
+      this.$router.push(route);
     }
   }
 };

@@ -1,0 +1,28 @@
+/**
+ * 分页获取文章列表
+ *
+ * @url /getDictionaryListByPage
+ *
+ * 参数说明：
+ * pageIndex: 当前页码
+ * pageSize:  每页页条数
+ *
+ * 返回
+ *
+ * _id：字典id
+ * name：名称
+ * status：状态 (0:未启用 1：正常)
+ *
+ */
+{
+  "code": 0,
+  "total": 201,
+  "data|10": [
+    {
+      "_id|+1": 1,
+      "name|4": "@cword",
+      "desc|0-10": "@cword",
+      "status|1": [0, 1] // 0:未启用 1：正常
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+/**
+ * 获取全部字典列表
+ *
+ * @url /getAllDictionaryList
+ *
+ * 参数说明：
+ * 无
+ *
+ * 返回
+ *
+ * _id：字典id
+ * name：名称
+ * status：状态 (0:未启用 1：正常)
+ * children：子目录
+ *
+ */
+{
+  "code": 0,
+  "total": 85,
+  "data|10": [
+    {
+      "_id|+1": 1,
+      "name|4": "@cword",
+      "desc|0-10": "@cword",
+      "status|1": [0, 1],
+      "children|0-5": [
+        {
+          "_id|+1": 1,
+          "name|4": "@cword",
+          "desc|0-10": "@cword",
+          "status|1": [0, 1]
+        }
+      ]
+    }
+  ]
+}

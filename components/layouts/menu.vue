@@ -14,8 +14,11 @@
           <span slot="title">系统管理</span>
         </template>
         <el-menu-item-group v-active>
-          <nuxt-link class="button" :to="{name: 'system-dictionary'}">
+          <nuxt-link class="button" :to="{name: 'system-dictionary-page', params: {page: 1}}">
             <el-menu-item index="2-1" class="nav-dictionary">字典管理</el-menu-item>
+          </nuxt-link>
+          <nuxt-link class="button" :to="{name: 'system-dictionaryContent'}">
+            <el-menu-item index="2-2" class="nav-dictionary">字典内容管理</el-menu-item>
           </nuxt-link>
         </el-menu-item-group>
       </el-submenu>

@@ -27,10 +27,10 @@
           <el-date-picker
             v-model="searchFrom.publishTime"
             type="daterange"
-            size="small"
+            range-separator="至"
             start-placeholder="开始日期"
             end-placeholder="结束日期"
-            :default-time="['00:00:00', '23:59:59']">
+            value-format="yyyy-MM-dd">
           </el-date-picker>
         </el-form-item>
         <el-form-item>
@@ -39,7 +39,7 @@
       </el-form>
       <el-table ref="multipleTable" :data="tableData" tooltip-effect="dark" border @selection-change="handleSelectionChange">
         <el-table-column type="selection" width="55"></el-table-column>
-        <el-table-column prop="title" label="标题">
+        <el-table-column prop="title" label="标题" :show-overflow-tooltip="true">
           <template slot-scope="scope">
             <nuxt-link class="title" :to="{name: 'article-id', params: { id: scope.row._id }}">{{ scope.row.title }}</nuxt-link>
           </template>
@@ -71,7 +71,7 @@
           <ajax-button text="批量删除" size="small" type="danger" icon="el-icon-delete"
             :action="delArticleByIds" action-type="delete" :selected="multipleSelection" :callback="getListByPage"></ajax-button>
         </div>
-        <pagination class="fr" page-name="article-list-page" :page-index="pageIndex" :total="total"></pagination>
+        <pagination class="fr" :route="{ name: 'article-list-page', query: this.searchFrom}" :page-index="pageIndex" :total="total"></pagination>
       </div>
     </div>
   </el-row>
@@ -125,6 +125,7 @@ export default {
       this.getListByPage();
     },
     async getListByPage (pageIndex = +this.$route.params.page) {
+      debugger;
       const query = Object.assign({}, { pageIndex }, this.searchFrom);
       const result = await getArticleListByPage(query);
       result.data.forEach(element => {
@@ -138,6 +139,10 @@ export default {
     delArticleByIds
   },
   mounted () {
+    this.searchFrom.title = this.$route.query.title;
+    this.searchFrom.category = this.$route.query.category;
+    this.searchFrom.state = this.$route.query.state;
+    this.searchFrom.publishTime = this.$route.query.publishTime;
     this.getListByPage(this.pageIndex);
   }
 };
