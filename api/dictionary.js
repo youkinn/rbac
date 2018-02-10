@@ -92,3 +92,87 @@ export function setInvalidDictionaryByIds (data) {
     data
   });
 }
+
+/**
+ * 分页字典内容列表
+ *
+ * @export
+ * @param {any} params
+ * @returns
+ */
+export function getDictionaryContentListByPage (params) {
+  return axios({
+    url:
+      NODE_ENV.SERVER_ADDRESS +
+      apiTypeArr[apiType].getDictionaryContentListByPage,
+    method: 'get',
+    params
+  });
+}
+
+/**
+ * 修改字典内容
+ *
+ * @export
+ * @param {any} data
+ * @returns
+ */
+export function modifiyDictionaryContentById (data) {
+  return axios({
+    url:
+      NODE_ENV.SERVER_ADDRESS +
+      apiTypeArr[apiType].modifiyDictionaryContentById,
+    method: 'post',
+    data
+  });
+}
+
+/**
+ * 批量删除字典内容
+ *
+ * @export
+ * @param {any} data
+ * @returns
+ */
+export function delDictionaryContentByIds (data) {
+  return axios({
+    url:
+      NODE_ENV.SERVER_ADDRESS + apiTypeArr[apiType].delDictionaryContentByIds,
+    method: 'post',
+    data
+  });
+}
+
+/**
+ * 批量设置字典内容状态（有效化）
+ *
+ * @export
+ * @param {any} data
+ * @returns
+ */
+export function setValidDictionaryContentByIds (data) {
+  return axios({
+    url:
+      NODE_ENV.SERVER_ADDRESS +
+      apiTypeArr[apiType].setValidDictionaryContentByIds,
+    method: 'post',
+    data
+  });
+}
+
+/**
+ * 批量设置字典内容状态（无效化）
+ *
+ * @export
+ * @param {any} data
+ * @returns
+ */
+export function setInvalidDictionaryContentByIds (data) {
+  return axios({
+    url:
+      NODE_ENV.SERVER_ADDRESS +
+      apiTypeArr[apiType].setInvalidDictionaryContentByIds,
+    method: 'post',
+    data
+  });
+}

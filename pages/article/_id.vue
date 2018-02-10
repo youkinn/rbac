@@ -6,7 +6,7 @@
     </el-breadcrumb>
     <el-row>
       <el-col :span="16">
-        <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm" :inline-message="false">
+        <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px" :inline-message="false">
           <el-form-item label="文章标题" prop="title">
             <el-input v-model="ruleForm.title" placeholder="请输入文章标题" :maxlength="20"></el-input>
           </el-form-item>

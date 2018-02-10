@@ -12,6 +12,11 @@ const test = {
   delDictionaryByIds: '/api/doAction', // 批量删除字典目录
   setValidDictionaryByIds: '/api/doAction', // 批量设置字典目录状态（有效）
   setInvalidDictionaryByIds: '/api/doAction', // 批量设置字典目录状态（无效）
-  modifiyDictionaryById: '/api/doAction' // 修改文章
+  modifiyDictionaryById: '/api/doAction', // 修改字典目录
+  getDictionaryContentListByPage: '/api/getDictionaryContentListByPage', // 分页获取字典内容列表
+  delDictionaryContentByIds: '/api/doAction', // 批量删除字典内容
+  setValidDictionaryContentByIds: '/api/doAction', // 批量设置字典内容状态（有效）
+  setInvalidDictionaryContentByIds: '/api/doAction', // 批量设置字典内容状态（无效）
+  modifiyDictionaryContentById: '/api/doAction' // 修改字典内容
 };
 export default test;

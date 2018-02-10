@@ -17,7 +17,7 @@
           <nuxt-link class="button" :to="{name: 'system-dictionary-page', params: {page: 1}}">
             <el-menu-item index="2-1" class="nav-dictionary">字典管理</el-menu-item>
           </nuxt-link>
-          <nuxt-link class="button" :to="{name: 'system-dictionaryContent'}">
+          <nuxt-link class="button" :to="{name: 'system-dictionaryCont-page'}">
             <el-menu-item index="2-2" class="nav-dictionary">字典内容管理</el-menu-item>
           </nuxt-link>
         </el-menu-item-group>
